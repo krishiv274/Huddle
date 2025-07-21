@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../context/AuthContext";
-import assets from "../assets/assets";
 import "../styles/animations.css";
 
 const LoginPage = () => {
