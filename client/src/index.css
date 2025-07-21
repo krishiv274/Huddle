@@ -2,11 +2,10 @@
 
 @import "tailwindcss";
 
-* {
+*{
   font-family: "Outfit", sans-serif;
 }
 
-/* Hide scrollbar */
 ::-webkit-scrollbar{
   display: none;
 }
