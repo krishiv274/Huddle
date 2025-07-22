@@ -1,11 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 @import "tailwindcss";
 
-*{
+* {
   font-family: "Outfit", sans-serif;
 }
 
-::-webkit-scrollbar{
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Hide scrollbar globally but keep it functional */
+::-webkit-scrollbar {
   display: none;
+}
+
+/* Ensure scrollable containers can still scroll */
+.scrollable::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.5);
+  border-radius: 10px;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 51, 234, 0.7);
 }

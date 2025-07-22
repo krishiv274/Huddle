@@ -52,9 +52,9 @@ const ChatContainer = () => {
   }, [messages]);
 
   return selectedUser ? (
-    <div className="h-full overflow-hidden relative bg-white/5 backdrop-blur-sm">
+    <div className="h-full flex flex-col relative bg-white/5 backdrop-blur-sm">
       {/* Header */}
-      <div className="flex items-center gap-4 p-6 bg-white/10 backdrop-blur-xl border-b border-white/20 animate-slide-down">
+      <div className="flex items-center gap-4 p-6 bg-white/10 backdrop-blur-xl border-b border-white/20 animate-slide-down flex-shrink-0">
         <div className="relative">
           <img
             src={selectedUser.profilePic || assets.avatar_icon}
@@ -99,7 +99,7 @@ const ChatContainer = () => {
       </div>
 
       {/* Messages Area */}
-      <div className="flex flex-col h-[calc(100%-140px)] overflow-y-auto p-6 space-y-4 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto p-6 space-y-4 scrollable">
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -170,7 +170,7 @@ const ChatContainer = () => {
       </div>
 
       {/* Message Input */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 bg-white/10 backdrop-blur-xl border-t border-white/20">
+      <div className="p-6 bg-white/10 backdrop-blur-xl border-t border-white/20 flex-shrink-0">
         <div className="flex items-center gap-4 bg-white/10 rounded-2xl px-4 py-3 border border-white/20 focus-within:border-white/30 focus-within:ring-2 focus-within:ring-purple-400/50 transition-all duration-300">
           <input
             onChange={(e) => setInput(e.target.value)}
@@ -217,21 +217,27 @@ const ChatContainer = () => {
           animation: messageAppear 0.4s ease-out both;
         }
 
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
+        .scrollable {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(147, 51, 234, 0.5) rgba(255, 255, 255, 0.1);
         }
 
-        .custom-scrollbar::-webkit-scrollbar-track {
+        .scrollable::-webkit-scrollbar {
+          width: 6px;
+          display: block;
+        }
+
+        .scrollable::-webkit-scrollbar-track {
           background: rgba(255, 255, 255, 0.1);
           border-radius: 10px;
         }
 
-        .custom-scrollbar::-webkit-scrollbar-thumb {
+        .scrollable::-webkit-scrollbar-thumb {
           background: rgba(147, 51, 234, 0.5);
           border-radius: 10px;
         }
 
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        .scrollable::-webkit-scrollbar-thumb:hover {
           background: rgba(147, 51, 234, 0.7);
         }
 

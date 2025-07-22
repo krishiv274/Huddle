@@ -21,7 +21,7 @@ const RightSidebar = () => {
         }`}
       >
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-scroll custom-scrollbar">
+        <div className="flex-1 overflow-y-auto scrollable">
           {/* Profile Header */}
           <div className="pt-8 pb-6 flex flex-col items-center gap-4 text-center animate-fade-in">
             <div className="relative mb-4">
@@ -143,21 +143,27 @@ const RightSidebar = () => {
             animation: slideInUp 0.6s ease-out 0.2s both;
           }
 
-          .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
+          .scrollable {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(147, 51, 234, 0.5) rgba(255, 255, 255, 0.1);
           }
 
-          .custom-scrollbar::-webkit-scrollbar-track {
+          .scrollable::-webkit-scrollbar {
+            width: 4px;
+            display: block;
+          }
+
+          .scrollable::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
           }
 
-          .custom-scrollbar::-webkit-scrollbar-thumb {
+          .scrollable::-webkit-scrollbar-thumb {
             background: rgba(147, 51, 234, 0.5);
             border-radius: 10px;
           }
 
-          .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          .scrollable::-webkit-scrollbar-thumb:hover {
             background: rgba(147, 51, 234, 0.7);
           }
 

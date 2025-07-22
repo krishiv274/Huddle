@@ -32,7 +32,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`bg-white/5 backdrop-blur-xl border-r border-white/20 h-full p-6 overflow-y-scroll text-white transition-all duration-300 ${
+      className={`bg-white/5 backdrop-blur-xl border-r border-white/20 h-full p-6 overflow-y-auto scrollable text-white transition-all duration-300 ${
         selectedUser ? "max-md:hidden" : ""
       }`}
     >

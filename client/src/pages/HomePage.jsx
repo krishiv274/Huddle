@@ -25,21 +25,21 @@ const HomePage = () => {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 w-full h-screen p-4 sm:px-[8%] sm:py-[3%] animate-fade-in">
+      <div className="relative z-10 w-full h-full p-4 sm:px-[8%] sm:py-[3%] animate-fade-in">
         <div
-          className={`bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden h-[100%] grid grid-cols-1 relative shadow-2xl transition-all duration-300 hover:shadow-purple-500/10 ${
+          className={`bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden h-full grid grid-cols-1 relative shadow-2xl transition-all duration-300 hover:shadow-purple-500/10 ${
             selectedUser
               ? "md:grid-cols-[1fr_1.5fr_1fr] xl:grid-cols-[1fr_2fr_1fr]"
               : "md:grid-cols-2"
           }`}
         >
-          <div className="animate-slide-in-left">
+          <div className="animate-slide-in-left overflow-hidden">
             <Sidebar />
           </div>
-          <div className="animate-slide-in-up">
+          <div className="animate-slide-in-up overflow-hidden">
             <ChatContainer />
           </div>
-          <div className="animate-slide-in-right">
+          <div className="animate-slide-in-right overflow-hidden">
             <RightSidebar />
           </div>
         </div>
